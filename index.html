@@ -44,7 +44,7 @@
 								<p>Gizmologists</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="#feather-clock" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
+								<a href="#feather-clock" class="image fit thumb"><img src="images/ClockPicture.jpg" alt="" /></a>
 								<h3>Feather pen clock</h3>
 								<p>Gizmologists</p>
 							</article>
@@ -57,6 +57,11 @@
 								<a href="#brake-rotor" class="image fit thumb"><img src="images/FusionFEA.png" alt="" /></a>
 								<h3>Brake Rotor Analysis</h3>
 								<p>Virginia Motorsports, Cockpit and Controls</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+							<a href="#celtic-harp" class="image fit thumb"><img src="images/FrontGuitar.png" alt="" /></a>
+							<h3>Celtic Autoharp Guitar</h3>
+							<p>Advanced Mechatronics</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="#pronator-test" class="image fit thumb"><img src="images/PronatorDriftVid.png" alt="" /></a>
@@ -86,7 +91,8 @@
 							<img src="images/PrintedTopper.jpg" alt="printedtopper">
 							<p>Designed 3D printed topper to be overlayed on the wooden frame. Includes sockets for inserting buttons and mount for OLED display. This topper was 3D printed in three sections and fitted together on top of a plywood layer.</p>
 							<img src="images/ButtonWiring.jpg" alt="woodjoints">
-							<p>Used 2n3904 npn transistors to sink sufficient power through the LEDs inbuilt into the buttons and programmed a standard whack-a-mole game into the arduino. </p>	
+							<p>Used 2n3904 npn transistors to sink sufficient power through the LEDs inbuilt into the buttons and programmed a standard whack-a-mole game into the arduino.
+								A second iteration of this will be build on a perf-board with a darlington transistor array IC and raspberry pi for more complex games. </p>	
 						</article>
 
 						<hr class="divider">
@@ -94,12 +100,27 @@
 						<!-- Feather Pen Clock -->
 						<article id="feather-clock" class="project-detail">
 							<h3>Feather Pen Clock</h3>
-							<p>Gizmologists: A mechanical clock driven by a gantry and servo-mounted feather pen. This clock writes the time on itself all day in the mechanical engineering building.</p>
-							<video controls width="60%" style="display:block; margin: 0 auto;">
-  							<source src="images/PronTestVid.mp4" type="video/mp4">
+							<p>Gizmologists: A mechanical clock driven by a gantry and servo-mounted feather pen. This clock will writes the time on itself all day in the mechanical engineering building.</p>
+							<video autoplay loop muted playsinline width="60%" style="display:block; margin: 0 auto;">
+  							<source src="images/ClockHoming.mp4" type="video/mp4">
   							Your browser does not support the video tag.
 							</video>
-							<p><strong>Tools/Skills:</strong> CAD, 3D printing, microcontrollers</p>
+							<p>
+								When turned on, the arduino nano initiates a calibration sequence that sets minimum and maximum x and y coordinates. The gantry moves until
+								it hits its limit switch in y and each of two limit switches in x. This is used to create planes in which numbers will be drawn.
+							</p>
+							<img src="images/ClockCircuits.jpg" alt="Sprite Display" style="width: 60%; height: auto; display: block; margin: 0 auto;" />
+							<p>
+								2 A4988 stepper motor drivers facilitate control of the longitudinal and lateral stepper motors. A LM7805 5V regulator takes in 12V from
+								a power supply and outputs 5V for arduino power and driver logic power. The 12V is used to power the stepper motors' coils. Limit switches are
+								wired with pull-down resistors, and the servo is controlled by a single arduino pin.
+							</p>
+							<video autoplay loop muted playsinline width="70%" style="display:block; margin: 0 auto;">
+  							<source src="images/NumberChange.mp4" type="video/mp4">
+  							Your browser does not support the video tag.
+							</video>
+							<p>During each change of minute, the clock erases one of the LCD boogie boards and writes in a new number. </p>
+							<p><strong>Tools/Skills:</strong> Computer-aided design, servo control, stepper motor drivers, 3D printing, microcontroller programming, object-oriented programming</p>
 						</article>
 
 						<hr class="divider">
@@ -107,9 +128,12 @@
 						<!-- Sprite Display -->
 						<article id="sprite-display" class="project-detail">
 							<h3>Sprite Display</h3>
-							<p>Gizmologists: Designed a 32x32 LED display to display characters from the Mechatronics class video game project.</p>
+							<p>Gizmologists: Designing a 32x32 LED display to display characters from the Mechatronics class video game project.</p>
 							<img src="images/Goomba.jpg" alt="Sprite Display" style="width: 80%; height: auto; display: block; margin: 0 auto;" />
-							<p><strong>Tools/Skills:</strong> Arduino, C++, LED matrices</p>
+							<p>Shown sprite is a proof of concept with 16x16 LED array, and the acrylic sheet on top of the LED matrix diffuses the light to make the
+								color appear fuller. Four arrays are being used together to draw the 32x32 pixel sprites, with a frame of laser-cut acrylic and 3D printed material
+							holding the LED arrays together.</p>
+							<p><strong>Tools/Skills:</strong> Arduino, C++, LED matrices, laser-cutting</p>
 						</article>
 
 						<hr class="divider">
@@ -118,7 +142,7 @@
 						<article id="brake-rotor" class="project-detail">
 						<h3>Brake Rotor Analysis / Heat Model</h3>
 						<p>Virginia Motorsports: Simulated rotor thermal behavior over simulated race lap using conduction, convection, and radiation models. Implemented in Python to compare transient heat transfer effects and maximum temperature experienced by different brake rotor geometries.</p>
-						<h4>Thermal stress study in SOLIDWORKS: </h4>
+						<h4>Thermal study in SOLIDWORKS: </h4>
 						<img src="images/FusionFEA.png" alt="Brake Rotor Analysis" style="width: 80%; height: auto; display: block; margin: 0 auto;" />
 						<h4>Python Simulation Code Snippet: </h4>
 						<p>This snippet calculates change in temperature with respect to time from heat energy loss due to conduction, convention, and radiation and heat energy added from braking power. Euler's method is applied to solve if this differential equation computationally to create the temperature over time graph shown below.</p>
@@ -145,7 +169,37 @@ for i in range(len(brakes_table) - 1):
 						<p><strong>Tools/Skills:</strong> Python, Pandas, matplot, FEA, thermal modeling</p>
 
 						</article>
+						
+						<hr class="divider">
 
+						<!-- Soft Robotic Exoskeleton -->
+						<article id="celtic-harp" class="project-detail">
+						<h3>Celtic Autoharp Guitar</h3>
+						<p>
+							Work-in-progress guitar designed to resemble a celtic harp while merging the concept of an "autoharp". The user will be able to press a button 
+							to automatically finger a chord using solenoids that mute the strings not being played.
+						</p>
+
+						<img src="images/FrontGuitar.png" alt="Guitar Front" style="width:80%; height:auto; display:block; margin:0 auto;" />
+						<img src="images/GuitarBack.png" alt="Guitar Back" style="width:80%; height:auto; display:block; margin:0 auto;" />
+
+						<p>
+							Back of the guitar includes channeling for wires to pickups and solenoids. This will all be CNC milled out of marine-grade plywood.
+						</p>
+
+						<img src="images/GuitarVibration.png" alt="Guitar Vibration" style="width:80%; height:auto; display:block; margin:0 auto;" />
+						<p>
+							Finite element analysis in SOLIDWORKS to determine resonant frequencies of design. Used to make edits to design to achieve resonant frequencies
+							of common notes played on the guitar.
+						</p>
+						<img src="images/GuitarFXCircuit.png" alt="Guitar FX" style="width:80%; height:auto; display:block; margin:0 auto;" />
+						<p>
+							Custom FX pedal to process signal from guitar pickup. Sinusoidal signal goes through a half wave rectifier one one side and
+							sine-to-square wave conversion on the other. Square wave goes through a negative rectifier, then both signals are added in a
+							summing amplifier. Resulting sound is between a sine wave and square wave.
+						</p>
+						<p><strong>Tools/Skills:</strong> Analog circuits, computer-aided design, finite element analysis</p>
+						</article>
 						<hr class="divider">
 
 						<!-- Quantitative Pronator Drift Test -->
@@ -187,7 +241,7 @@ if (tick < 11 && tick > 1) { // calculate baseline pronation from first 10s
   Serial.println(pronzero2sum);
 }
 </code></pre>
-							<video controls width="60%" style="display:block; margin: 0 auto;">
+							<video autoplay loop muted playsinline width="60%" style="display:block; margin: 0 auto;">
   							<source src="images/PronTestVid.mp4" type="video/mp4">
   							Your browser does not support the video tag.
 							</video>
@@ -199,8 +253,12 @@ if (tick < 11 && tick > 1) { // calculate baseline pronation from first 10s
 						<!-- Magic Chessboard -->
 						<article id="magic-chessboard" class="project-detail">
 							<h3>Magic Chessboard</h3>
-							<p>Gizmologists: Mechanized chessboard with automated piece movement. Demonstrated electromechanical design and control systems.</p>
-							<img src="images/fulls/06.jpg" alt="Magic Chessboard">
+							<p>Gizmologists: Work-in-progress mechanized chessboard with automated piece movement. The central carriage carrying the electromagnet is driven by a dual-timing belt core XY mechanism
+								and two stepper motors. The electromagnet can turn on to drag chess pieces with embedded magnets from underneath the board. Intended sensing mechanism is a reed switch
+								on each square that would close when a piece is placed on top of it. All pieces can be stored in an array so that an AI opponent can tell where all pieces are
+								at all times and can initiate movements of pieces while interpretting human player's moves.
+							</p>
+							<img src="images/MagicChessboardVert.png" alt="Magic Chessboard" style="width: 90%; height: auto; display: block; margin: 0 auto;" />
 							<p><strong>Tools/Skills:</strong> CAD, microcontrollers, motors, electronics</p>
 						</article>
 					</section>
