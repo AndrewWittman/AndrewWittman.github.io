@@ -109,17 +109,28 @@
 								When turned on, the arduino nano initiates a calibration sequence that sets minimum and maximum x and y coordinates. The gantry moves until
 								it hits its limit switch in y and each of two limit switches in x. This is used to create planes in which numbers will be drawn.
 							</p>
-							<img src="images/ClockCircuits.jpg" alt="Sprite Display" style="width: 60%; height: auto; display: block; margin: 0 auto;" />
+							<img src="images/PerfBoard.jpg" alt="Perf Board" style="width: 60%; height: auto; display: block; margin: 0 auto;" />
 							<p>
 								2 A4988 stepper motor drivers facilitate control of the longitudinal and lateral stepper motors. A LM7805 5V regulator takes in 12V from
 								a power supply and outputs 5V for arduino power and driver logic power. The 12V is used to power the stepper motors' coils. Limit switches are
-								wired with pull-down resistors, and the servo is controlled by a single arduino pin.
-							</p>
+								connected to ground and use internal I/O pin pull-up resistors. The servo is controlled by a single arduino pin, as well as the LCD boogie boards
+								that the numbers are drawn on to.
+						 	</p>
 							<video autoplay loop muted playsinline width="70%" style="display:block; margin: 0 auto;">
   							<source src="images/NumberChange.mp4" type="video/mp4">
   							Your browser does not support the video tag.
 							</video>
 							<p>During each change of minute, the clock erases one of the LCD boogie boards and writes in a new number. </p>
+							<img src="images/PlotterSide.jpg" alt="Plotter Side" style="width: 60%; height: auto; display: block; margin: 0 auto;" />
+							<p>
+								To resolve poor sustained contact between the pen and board caused by friction and pen flexion, a rack and pinion subassembly was designed to allow
+								the pen to be pressed down with force orthogonal to the board. 
+						 	</p>
+							<video autoplay loop muted playsinline width="70%" style="display:block; margin: 0 auto;">
+  							<source src="images/PenClockTimeChange.mp4" type="video/mp4">
+  							Your browser does not support the video tag.
+							</video>
+							<p>Shown above is the clock with the new rack and pinion pen subassembly transitioning from 11:59 AM to 12:00 PM. </p>
 							<p><strong>Tools/Skills:</strong> Computer-aided design, servo control, stepper motor drivers, 3D printing, microcontroller programming, object-oriented programming</p>
 						</article>
 
