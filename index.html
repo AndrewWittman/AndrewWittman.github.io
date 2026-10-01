@@ -39,14 +39,19 @@
 						<h2>Recent Work</h2>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
-								<a href= "#whack-a-mole" class="image fit thumb"><img src="images/ButtonGame.jpg" alt="" /></a>
-								<h3>Whack-a-mole</h3>
-								<p>Gizmologists</p>
-							</article>
-							<article class="col-6 col-12-xsmall work-item">
 								<a href="#feather-clock" class="image fit thumb"><img src="images/ClockPicture.jpg" alt="" /></a>
 								<h3>Feather pen clock</h3>
 								<p>Gizmologists</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="#smart-globe" class="image fit thumb"><img src="images/GlobeCADAssembly.png" alt="In-progress Fusion 360 assembly for the Smart Globe" /></a>
+								<h3><a href="#smart-globe">Smart Globe</a></h3>
+								<p>In-progress CAD and kinematics</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="#harmonic-drive" class="image fit thumb"><img src="images/HarmonicDriveAssembledCAD.png" alt="Assembled harmonic drive in CAD" /></a>
+								<h3><a href="#harmonic-drive">Harmonic and Cycloidal Drives</a></h3>
+								<p>Custom harmonic drive and a physically built cycloidal drive</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 								<a href="#sprite-display" class="image fit thumb"><img src="images/SpriteSS.png" alt="" /></a>
@@ -57,6 +62,11 @@
 								<a href="#brake-rotor" class="image fit thumb"><img src="images/FusionFEA.png" alt="" /></a>
 								<h3>Brake Rotor Analysis</h3>
 								<p>Virginia Motorsports, Cockpit and Controls</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="#whack-a-mole" class="image fit thumb"><img src="images/ButtonGame.jpg" alt="" /></a>
+								<h3>Whack-a-mole</h3>
+								<p>Gizmologists</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
 							<a href="#celtic-harp" class="image fit thumb"><img src="images/FrontGuitar.png" alt="" /></a>
@@ -79,23 +89,6 @@
 					<!-- full portfolio section -->
 					<section id="portfolio">
 						<h2>Full Portfolio</h2>
-
-						<!-- Whack-a-mole -->
-						<article id="whack-a-mole" class="project-detail">
-							<h3>Whack-a-Mole</h3>
-							<p>An interactive game built with wood and PLA and programmed into an arduino uno. Designed to test player reaction time and advertise the Gizmologists to students on grounds during outreach events.</p>
-							<img src="images/ButtonGame.jpg" alt="Whack-a-Mole">
-							<p><strong>Tools/Skills:</strong> microcontroller programming, circuits, 3D printing, computer-aided design, woodworking</p>
-							<img src="images/WoodJoints.jpg" alt="woodjoints">
-							<p>Used miter saw, jointer, and planer to build frame to hold the buttons.</p>
-							<img src="images/PrintedTopper.jpg" alt="printedtopper">
-							<p>Designed 3D printed topper to be overlayed on the wooden frame. Includes sockets for inserting buttons and mount for OLED display. This topper was 3D printed in three sections and fitted together on top of a plywood layer.</p>
-							<img src="images/ButtonWiring.jpg" alt="woodjoints">
-							<p>Used 2n3904 npn transistors to sink sufficient power through the LEDs inbuilt into the buttons and programmed a standard whack-a-mole game into the arduino.
-								A second iteration of this will be build on a perf-board with a darlington transistor array IC and raspberry pi for more complex games. </p>	
-						</article>
-
-						<hr class="divider">
 
 						<!-- Feather Pen Clock -->
 						<article id="feather-clock" class="project-detail">
@@ -132,6 +125,42 @@
 							</video>
 							<p>Shown above is the clock with the new rack and pinion pen subassembly transitioning from 11:59 AM to 12:00 PM. </p>
 							<p><strong>Tools/Skills:</strong> Computer-aided design, servo control, stepper motor drivers, 3D printing, microcontroller programming, object-oriented programming</p>
+						</article>
+
+						<hr class="divider">
+
+						<!-- Smart Globe -->
+						<article id="smart-globe" class="project-detail">
+							<h3>Smart Globe (In Progress)</h3>
+							<p>Motorized globe project exploring how drive-wheel motion can control the orientation of a sphere. End goal is
+								to be able to say the name of a country and have the globe rotate to that country using Raspberry Pi speech to
+								text, coordinate lookup table, and inverse kinematics to turn to the desired orientation.
+							</p>
+							<h4>Globe CAD Assembly (In Progress)</h4>
+							<img src="images/GlobeCADAssembly.png" alt="In-progress Fusion 360 assembly of a globe supported by three drive modules" style="width: 80%; height: auto; display: block; margin: 0 auto;" />
+							<h4>Contact Geometry, Globe Motion, and Inverse Kinematics</h4>
+							<img src="images/GlobeKinematics.png" alt="Combined handwritten globe math pages covering drive-wheel contact geometry, globe motion, and inverse kinematics" style="width: 80%; height: auto; display: block; margin: 0 auto;" />
+							<p><strong>Tools/Skills:</strong> Fusion 360, CAD, mechanical design, kinematics, inverse kinematics</p>
+						</article>
+
+						<hr class="divider">
+
+						<!-- Harmonic and Cycloidal Drives -->
+						<article id="harmonic-drive" class="project-detail">
+							<h3>Harmonic Drive for Robotic Arm (In Progress)</h3>
+							<p>Design of a harmonic drive for use in a robotic arm that draws images using a light and long exposure.</p>
+							<h4>Harmonic Drive Exploded Assembly</h4>
+							<img src="images/HarmonicDriveExploded.png" alt="Exploded assembly view of the harmonic drive" style="width: 80%; height: auto; display: block; margin: 0 auto;" />
+							<h4>Flexspline and Circular Spline Cross-Section</h4>
+							<img src="images/WaveGenFlexandCircularSpline.png" alt="Cross-section of the harmonic drive flexspline and circular spline" style="width: 80%; height: auto; display: block; margin: 0 auto;" />
+							<p>The wave generator's elliptical profile deforms the thin-walled flexspline, bringing its 70 teeth into engagement with the 72-tooth circular spline at two opposite regions. As the wave generator turns, these engagement regions travel around the splines, making the flexspline rotate slowly in the opposite direction. With the circular spline fixed and the flexspline as the output, the two-tooth difference gives a 35:1 reduction. Both splines use a module of 0.87.</p>
+							<h4>Assembly Side Section</h4>
+							<img src="images/HarmonicSideSectoinView.png" alt="Side section view of the harmonic drive assembly" style="width: 80%; height: auto; display: block; margin: 0 auto;" />
+							<h4>Harmonic Drive CAD Assembly</h4>
+							<img src="images/HarmonicDriveAssembledCAD.png" alt="Assembled harmonic drive in CAD" style="width: 80%; height: auto; display: block; margin: 0 auto;" />
+							<h4>Cycloidal Drive</h4>
+							<!-- Add cycloidal drive image and project details when available. -->
+							<p><strong>Tools/Skills:</strong> CAD, mechanical design, drive design, assembly modeling</p>
 						</article>
 
 						<hr class="divider">
@@ -179,6 +208,23 @@ for i in range(len(brakes_table) - 1):
 
 						<p><strong>Tools/Skills:</strong> Python, Pandas, matplot, FEA, thermal modeling</p>
 
+						</article>
+
+						<hr class="divider">
+
+						<!-- Whack-a-mole -->
+						<article id="whack-a-mole" class="project-detail">
+							<h3>Whack-a-Mole</h3>
+							<p>An interactive game built with wood and PLA and programmed into an arduino uno. Designed to test player reaction time and advertise the Gizmologists to students on grounds during outreach events.</p>
+							<img src="images/ButtonGame.jpg" alt="Whack-a-Mole">
+							<p><strong>Tools/Skills:</strong> microcontroller programming, circuits, 3D printing, computer-aided design, woodworking</p>
+							<img src="images/WoodJoints.jpg" alt="woodjoints">
+							<p>Used miter saw, jointer, and planer to build frame to hold the buttons.</p>
+							<img src="images/PrintedTopper.jpg" alt="printedtopper">
+							<p>Designed 3D printed topper to be overlayed on the wooden frame. Includes sockets for inserting buttons and mount for OLED display. This topper was 3D printed in three sections and fitted together on top of a plywood layer.</p>
+							<img src="images/ButtonWiring.jpg" alt="woodjoints">
+							<p>Used 2n3904 npn transistors to sink sufficient power through the LEDs inbuilt into the buttons and programmed a standard whack-a-mole game into the arduino.
+								A second iteration of this will be build on a perf-board with a darlington transistor array IC and raspberry pi for more complex games. </p>	
 						</article>
 						
 						<hr class="divider">
