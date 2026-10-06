@@ -78,8 +78,10 @@ input, select, textarea {
 		box-sizing: border-box;
 		scroll-behavior: smooth;
 	}
-	.project-detail {
-    scroll-margin-top: 2em; /* prevents top from being hidden if you have any fixed headers */
+	.project-detail,
+	#projects,
+	#experience {
+		scroll-margin-top: 2em;
 	}
 
 	*, *:before, *:after {
@@ -2561,12 +2563,12 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 
-		#two .work-item .image {
+		#projects .work-item .image {
 			aspect-ratio: 4 / 3;
 			overflow: hidden;
 		}
 
-			#two .work-item .image img {
+			#projects .work-item .image img {
 				height: 100%;
 				object-fit: cover;
 			}
@@ -2599,7 +2601,7 @@ input, select, textarea {
 			left: 0;
 			width: 25%;
 			height: 100%;
-			padding: 8em 4em;
+			padding: 8em 1em 4em 1em;
 			text-align: right;
 			color: rgba(255, 255, 255, 0.5);
 
@@ -2648,7 +2650,7 @@ input, select, textarea {
 
 		#header h1 {
 			color: rgba(255, 255, 255, 0.5);
-			font-size: 1.35em;
+			font-size: clamp(1em, 1.2vw, 1.35em);
 			line-height: 1.75em;
 			margin: 0;
 			text-align: left;
@@ -2675,6 +2677,8 @@ input, select, textarea {
 	}
 
 	#footer .icons {
+		display: flex;
+		justify-content: center;
 		margin: 1em 0 0 0;
 	}
 
@@ -2717,7 +2721,124 @@ input, select, textarea {
 		width: calc(100% - 25%);
 	}
 
-		#main > section {
+	.portfolio-nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2em;
+		margin: 2em 0 0;
+	}
+
+	.project-navigation {
+		align-items: center;
+		background: #f7f7f7;
+		border: solid 1px #e5e5e5;
+		border-radius: 0.5em;
+		display: flex;
+		gap: 0.75em;
+		justify-content: space-between;
+		margin: 0 0 1.5em;
+		padding: 0.75em;
+		position: sticky;
+		top: 0.5em;
+		z-index: 2;
+	}
+
+		.project-navigation a {
+			background: #fff;
+			border: solid 2px #49bf9d;
+			border-radius: 0.35em;
+			color: #49bf9d;
+			font-size: 0.8em;
+			line-height: 1.5em;
+			padding: 0.25em 0.75em;
+			white-space: nowrap;
+		}
+
+			.project-navigation a:hover {
+				background: #49bf9d;
+				color: #fff !important;
+			}
+
+	@media screen and (max-width: 736px) {
+
+		.project-navigation {
+			gap: 0.35em;
+		}
+
+			.project-navigation a {
+				font-size: 0.7em;
+				padding: 0.25em 0.4em;
+				text-align: center;
+				white-space: normal;
+			}
+
+	}
+
+		.portfolio-nav a {
+			font-size: 1.25em;
+			font-weight: 600;
+		}
+
+	.experience-item {
+		border-top: solid 2px #efefef;
+		margin: 1.5em 0 0;
+		padding: 1.5em 0 0;
+	}
+
+	#experience > h3:not(:first-of-type) {
+		margin-top: 2em;
+	}
+
+		.experience-heading {
+			align-items: baseline;
+			display: flex;
+			justify-content: space-between;
+			gap: 1em;
+		}
+
+			.experience-heading h4 {
+				margin: 0;
+			}
+
+			.experience-heading h4 span,
+			.experience-heading > p {
+				color: #a2a2a2;
+				font-size: 0.8em;
+			}
+
+			.experience-heading > p {
+				margin: 0;
+				white-space: nowrap;
+			}
+
+		.experience-role {
+			font-style: italic;
+			margin: 0 0 0.75em;
+		}
+
+		.experience-item ul {
+			margin-bottom: 0;
+		}
+
+		#harmonic-drive .video-crop {
+			aspect-ratio: 16 / 9;
+			margin: 0 auto 2em;
+			overflow: hidden;
+			width: 70%;
+		}
+
+		#harmonic-drive .video-crop--wave {
+			aspect-ratio: 4 / 3;
+		}
+
+			#harmonic-drive .video-crop video {
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+				width: 100%;
+			}
+
+			#main > section {
 			border-top: solid 2px #efefef;
 			margin: 4em 0 0 0;
 			padding: 4em 0 0 0;
@@ -3026,12 +3147,12 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				padding: 6em 2em 3em 2em;
-				width: 20%;
+				padding: 6em 0.75em 3em 0.75em;
+				width: 24%;
 			}
 
 				#header h1 {
-					font-size: 1.25em;
+					font-size: clamp(1em, 1.6vw, 1.25em);
 				}
 
 					#header h1 br {
@@ -3041,6 +3162,14 @@ input, select, textarea {
 				#header > .inner {
 					margin-bottom: 0;
 				}
+
+		@media screen and (max-width: 1100px) {
+
+			#header h1 {
+				font-size: 1em;
+			}
+
+		}
 
 		/* Footer */
 
@@ -3055,10 +3184,10 @@ input, select, textarea {
 		/* Main */
 
 			#main {
-				margin-left: 20%;
+				margin-left: 24%;
 				max-width: none;
 				padding: 6em 2em 3em 2em;
-				width: calc(100% - 20%);
+				width: calc(100% - 24%);
 			}
 
 	}
@@ -3141,6 +3270,12 @@ input, select, textarea {
 				margin: 0;
 				padding: 6em 4em;
 				width: 100%;
+			}
+
+			.experience-heading {
+				align-items: flex-start;
+				flex-direction: column;
+				gap: 0.25em;
 			}
 
 	}
